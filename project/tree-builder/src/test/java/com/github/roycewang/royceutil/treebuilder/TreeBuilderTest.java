@@ -75,7 +75,7 @@ public class TreeBuilderTest extends TestCase{
         List<Item> tree = new ArrayList<>();
         TreeBuilder<Item,Integer> builder = new TreeBuilder<Item,Integer>(){
             @Override
-            protected boolean isRoot(Item itemNoParent){
+            protected boolean isRoot(Item itemNoParent,Integer pid){
                 return true;
             }
             @Override

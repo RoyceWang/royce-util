@@ -21,7 +21,7 @@ public abstract class TreeBuilder<T,K>{
                 pitem = this.findParent(cache,cacheIt,pid);
             }
             if(pitem == null){
-                if(this.isRoot(item)){
+                if(this.isRoot(item,pid)){
                     tree.add(item);
                 }
             }else{
@@ -50,7 +50,7 @@ public abstract class TreeBuilder<T,K>{
     protected abstract K getId(T item);
     protected abstract K getParentId(T item);
     protected abstract Collection<T> getChildren(T pitem);
-    protected abstract boolean isRoot(T itemNoParent);
+    protected abstract boolean isRoot(T itemNoParent,K pid);
     protected Comparator<T> initComparator(){
         return null;
     }
